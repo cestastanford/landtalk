@@ -10,7 +10,7 @@
  * always score higher than a conversation without such a match,
  * no matter how many matches it has for facets with lower relevance.
  *
- * @package Land Talk
+ * @package Land Talk Custom Theme
  */
 
 define( 'LOCATION_RADIUS', 20.0 );

@@ -3,7 +3,7 @@
  * Adds functionality to retrieve results from the MapQuest geocoding
  * service.
  *
- * @package Land Talk
+ * @package Land Talk Custom Theme
  */
 
 /**

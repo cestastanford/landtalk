@@ -385,3 +385,30 @@ function landtalk_prepare_lesson_for_rest_response( $post ) {
 	return $response;
 
 }
+
+
+/*
+*	Registers `/validate-youtube` endpoint.
+*/
+
+add_action(
+	'rest_api_init',
+	function () {
+		register_rest_route(
+			REST_API_NAMESPACE,
+			'/validate-youtube',
+			array(
+				'methods'  => 'GET',
+				'callback' => function( $request ) {
+					$str = $request['str'];
+					$id = landtalk_get_youtube_id( $str );
+					return array(
+						'str'   => $str,
+						'id'    => $id,
+						'valid' => landtalk_check_youtube_id_valid( $id ),
+					);
+				},
+			)
+		);
+	}
+);

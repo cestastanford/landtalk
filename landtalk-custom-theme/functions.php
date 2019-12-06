@@ -1,4 +1,9 @@
 <?php
+/**
+ * Theme Functions file.
+ *
+ * @package Land Talk Custom Theme
+ */
 
 /*
 *   Defines constants.
@@ -71,10 +76,10 @@ require_once 'inc/title.php';
 
 
 /*
-*   Defines utility functions.
+*   Defines supporting functions for validation of YouTube links.
 */
 
-require_once 'inc/util.php';
+require_once 'inc/validation.php';
 
 
 /*

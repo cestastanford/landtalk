@@ -33,7 +33,7 @@ function landtalk_conversation_video_shortcode( $atts ) {
     ?>
 
 <div class="conversation-video-shortcode">
-    <iframe width="100%" height="600" src="https://www.youtube.com/embed/<?php echo landtalk_get_youtube_embed( get_field( 'youtube_url', $conversation )['url'] ); ?>?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+    <iframe width="100%" height="600" src="https://www.youtube.com/embed/<?php echo landtalk_get_youtube_id( get_field( 'youtube_url', $conversation )['url'] ); ?>?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
     <div class="caption">
         <strong><?php echo get_the_title( $conversation ); ?>: </strong>
         <span><?php echo get_field( 'summary', $conversation, false ); ?></span>

@@ -107,7 +107,7 @@ while ( have_posts() ) :
 	<hr>
 	<div class="columns">
 		<div class="column is-two-thirds">
-			<iframe width="100%" height="350" src="https://www.youtube.com/embed/<?php echo esc_attr( landtalk_get_youtube_embed( get_field( 'youtube_url' )['url'] ) ); ?>?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+			<iframe width="100%" height="350" src="https://www.youtube.com/embed/<?php echo esc_attr( landtalk_get_youtube_id( get_field( 'youtube_url' )['url'] ) ); ?>?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 		</div>
 		<div class="column is-one-third">
 			<div><?php the_field( 'summary' ); ?></div>

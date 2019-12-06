@@ -2,7 +2,7 @@
 /**
  * Functions for calculating distances.
  *
- * @package Land Talk
+ * @package Land Talk Custom Theme
  */
 
 /**
