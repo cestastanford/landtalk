@@ -79,3 +79,53 @@ add_filter(
 	10,
 	2
 );
+
+
+/*
+* If "Report All Invalid YouTube URLs on Update" is enabled in Options,
+* all Conversations' YouTube URLs will be checked for validitiy and
+* those that are not valid will be Reported (without an email sent).
+*/
+
+if ( get_field( 'report_invalid_youtube_urls', 'options' ) ) {
+
+	update_field( 'report_invalid_youtube_urls', false, 'options' );
+	$conversations_query = new WP_Query(
+		array(
+			'post_type'      => CONVERSATION_POST_TYPE,
+			'posts_per_page' => -1,
+		)
+	);
+
+	while ( $conversations_query->have_posts() ) {
+		$conversations_query->the_post();
+		$youtube_id = landtalk_get_youtube_id( get_field( 'youtube_url' )['url'] );
+		if ( empty( landtalk_check_youtube_id_valid( $youtube_id ) ) ) {
+
+			// Creates a new Report.
+			$report_id = wp_insert_post(
+				array(
+					'post_type'   => REPORT_POST_TYPE,
+					'post_status' => 'publish',
+					'post_title'  => 'Report of Conversation ' . get_the_ID(),
+				)
+			);
+
+			// Updates the Report.
+			update_field( 'reason_for_report', 'Invalid YouTube URL', $report_id );
+			update_field( 'more_details', 'Automatically reported using the "Report Invalid YouTube URLs" option.', $report_id );
+			update_field( 'conversation', get_the_ID(), $report_id );
+
+			// Unpublishes the Conversation.
+			wp_update_post(
+				array(
+					'ID'          => get_the_ID(),
+					'post_status' => 'pending',
+				)
+			);
+		}
+	}
+
+	wp_reset_postdata();
+
+}

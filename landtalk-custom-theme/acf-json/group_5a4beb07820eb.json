@@ -279,6 +279,25 @@
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_5deaffe3a676f",
+            "label": "Report Invalid YouTube URLs on Update",
+            "name": "report_invalid_youtube_urls",
+            "type": "true_false",
+            "instructions": "If set to \"Yes,\" the YouTube URLs of all Conversations will be validated and those with invalid URLs will be reported and unpublished.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -299,5 +318,5 @@
     "active": 1,
     "description": "",
     "recaptcha": 0,
-    "modified": 1568165594
+    "modified": 1575682103
 }

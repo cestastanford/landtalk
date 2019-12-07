@@ -6,6 +6,22 @@
  */
 
 /*
+*   Includes environmental variables.
+*/
+
+require_once 'inc/.env.php';
+
+
+/*
+*   Sets up custom email notification messages for conversations,
+*   reports and contact messages.
+*/
+
+require_once 'inc/email.php';
+
+
+
+/*
 *   Defines constants.
 */
 
@@ -80,21 +96,6 @@ require_once 'inc/title.php';
 */
 
 require_once 'inc/validation.php';
-
-
-/*
-*   Sets up custom email notification messages for conversations,
-*   reports and contact messages.
-*/
-
-require_once 'inc/email.php';
-
-
-/*
-*   Includes environmental variables.
-*/
-
-require_once 'inc/.env.php';
 
 
 /*
