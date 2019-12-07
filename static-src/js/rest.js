@@ -59,3 +59,15 @@ export const downloadLessons = async (params = {}) => {
 
   return cache[url];
 };
+
+
+/*
+* Given a YouTube URL or embed code, returns the ID for that video
+* if valid and embeddable.
+*/
+
+export const getValidYouTubeId = async (str) => {
+  const response = await fetch(`${absPath}/wp-json/landtalk/validate-youtube?str=${str}`);
+  const { valid, id } = await response.json();
+  return valid && id;
+};
