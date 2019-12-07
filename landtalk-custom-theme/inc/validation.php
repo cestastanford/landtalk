@@ -55,3 +55,27 @@ function landtalk_check_youtube_id_valid( $id ) {
 
 	return false;
 }
+
+
+/*
+* Enforces valid YouTube URL during ACF form validation.
+*/
+
+add_filter(
+	'acf/validate_value/key=' . YOUTUBE_URL_FIELD_KEY,
+	function( $valid, $value ) {
+		if ( ! $valid ) {
+			return $valid;
+		}
+
+		$id        = landtalk_get_youtube_id( $value );
+		$url_valid = landtalk_check_youtube_id_valid( $id );
+		if ( ! $url_valid ) {
+			$valid = 'YouTube URL is invalid, not public or not embeddable.';
+		}
+
+		return $valid;
+	},
+	10,
+	2
+);

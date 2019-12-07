@@ -68,3 +68,11 @@ define( 'N_TOP_KEYWORDS', 25 );
 */
 
 define( 'REST_API_NAMESPACE', 'landtalk' );
+
+
+/*
+*	Field key for the conversation submit form's YouTube URL field.
+*	Must match the ACF field name for YouTube URL validation to work.
+*/
+
+define( 'YOUTUBE_URL_FIELD_KEY', 'field_5a4be2440010c' );

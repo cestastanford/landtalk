@@ -101,16 +101,20 @@ const setupVideoPreview = () => {
   const handleInput = debounce((event) => {
     const url = event.target.value;
     if (url) {
-      youtubePreviewTitle.innerHTML = '<em>Checking...<em>';
+      youtubePreviewEmbed.innerHTML = '';
+      youtubePreviewTitle.innerHTML = '<em class="has-text-info">Checking...<em>';
       getValidYouTubeId(url).then((id) => {
         if (id) {
           youtubePreviewEmbed.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${id}?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>`;
-          youtubePreviewTitle.innerHTML = '<span class="has-text-success">Valid YouTube URL detected.</span>';
+          youtubePreviewTitle.innerHTML = '<strong class="has-text-success">Valid YouTube URL.</strong>';
         } else {
           youtubePreviewEmbed.innerHTML = '';
-          youtubePreviewTitle.innerHTML = '<strong class="has-text-danger">No valid YouTube URL detected.</strong>';
+          youtubePreviewTitle.innerHTML = '<strong class="has-text-danger">YouTube URL is invalid, not public or not embeddable.</strong>';
         }
       });
+    } else {
+      youtubePreviewEmbed.innerHTML = '';
+      youtubePreviewTitle.innerHTML = '<span>Enter URL to preview video.<span>';
     }
   }, 500);
 
