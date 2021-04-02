@@ -540,7 +540,7 @@
             "label": "YouTube URL (Required)",
             "name": "youtube_url",
             "type": "group",
-            "instructions": "Enter a valid URL to the YouTube video with the recorded conversation.  To find this URL, go to the YouTube page for the video, then copy and paste the URL for that page in your browser’s address bar.  The YouTube video must be set to Public and have embedding enabled.",
+            "instructions": "Enter a valid URL to the YouTube video with the recorded conversation. Please include \"Land Talk\" as part of the video title and add \"Land Talk\" as a tag to to video. Important: the YouTube video must be set to \"Public\" and have embedding enabled.",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -937,5 +937,5 @@
     "active": 1,
     "description": "",
     "recaptcha": 0,
-    "modified": 1617326165
+    "modified": 1617328522
 }
