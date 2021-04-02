@@ -161,6 +161,12 @@ while ( have_posts() ) :
 		<strong>Historic & Current Activities</strong>
 		<div><?php the_field( 'activities' ); ?></div>
 	</div>
+	<?php if ( get_field( 'will_change' ) && empty( get_field( 'will_change_hidden' ) ) ) : ?>
+		<div class="conversation-response">
+			<strong>How could this place change in the future?</strong>
+			<div><?php the_field( 'will_change' ); ?></div>
+		</div>
+	<?php endif; ?>
 	<?php if ( get_field( 'additional_information' ) ) : ?>
 		<div class="conversation-response">
 			<strong>Additional Information</strong>

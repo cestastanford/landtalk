@@ -81,6 +81,7 @@ $relevance_score_facets = array(
 						get_field( 'used_to_look', $post_id ),
 						get_field( 'has_changed', $post_id ),
 						get_field( 'activities', $post_id ),
+						get_field( 'will_change', $post_id ),
 					)
 				)
 			);

@@ -258,6 +258,52 @@
             "new_lines": "wpautop"
         },
         {
+            "key": "field_60666cb3347cc",
+            "label": "Hide field \"Changes in the Future\"",
+            "name": "will_change_hidden",
+            "type": "true_false",
+            "instructions": "If Conversation was created before the \"Changes in the Future\" field was added and therefore has no content for that field, use this toggle to hide \"Changes in the Future\" for this Conversation and make possible editing of other fields in this Conversation from WP admin.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": "field-will-change-hidden"
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_60666a240128d",
+            "label": "Changes in the Future (Required)",
+            "name": "will_change",
+            "type": "textarea",
+            "instructions": "How could this place change in the future, and do you think that is what should happen?",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60666cb3347cc",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "10-1000 characters",
+            "maxlength": 1000,
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
             "key": "field_5c9477862cb1a",
             "label": "Additional Information (Optional)",
             "name": "additional_information",
@@ -791,7 +837,7 @@
                 {
                     "key": "field_5c948517d326d",
                     "label": "",
-                    "name": "",
+                    "name": "public_consent",
                     "type": "checkbox",
                     "instructions": "",
                     "required": 0,
@@ -814,7 +860,7 @@
                 {
                     "key": "field_5c94853bd326e",
                     "label": "",
-                    "name": "",
+                    "name": "interviewee_consent",
                     "type": "checkbox",
                     "instructions": "",
                     "required": 0,
@@ -891,5 +937,5 @@
     "active": 1,
     "description": "",
     "recaptcha": 0,
-    "modified": 1568337927
+    "modified": 1617326165
 }
