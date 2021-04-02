@@ -9,7 +9,7 @@ import ConversationMap from "./conversation-map";
 import Conversations from "./conversations";
 import KeywordCloud from "./keyword-cloud";
 import KeywordSearch from "./keyword-search";
-import SortDropdown, { RELEVANCE_SORT, RANDOM_SORT } from "./sort-dropdown";
+import SortDropdown, { RELEVANCE_SORT, POPULAR_SORT } from "./sort-dropdown";
 
 /*
  * Returns a state object from the URL hash.
@@ -87,7 +87,7 @@ export default class ConversationArchive extends React.Component {
     //  Sets initial sort.
     const { searchSort, searchedKeyword } = this.state;
     if (!searchSort) {
-      this.state.searchSort = searchedKeyword ? RELEVANCE_SORT : RANDOM_SORT;
+      this.state.searchSort = searchedKeyword ? RELEVANCE_SORT : POPULAR_SORT;
     }
 
     this.updateSearch = this.updateSearch.bind(this);
@@ -126,7 +126,7 @@ export default class ConversationArchive extends React.Component {
         if (
           !prevState.searchedKeyword &&
           update.searchedKeyword &&
-          prevState.searchSort === RANDOM_SORT
+          prevState.searchSort === POPULAR_SORT
         ) {
           return {
             ...update,
@@ -142,7 +142,7 @@ export default class ConversationArchive extends React.Component {
         ) {
           return {
             ...update,
-            searchSort: RANDOM_SORT,
+            searchSort: POPULAR_SORT,
           };
         }
 
