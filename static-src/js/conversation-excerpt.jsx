@@ -1,44 +1,60 @@
 /*
-*   Imports.
-*/
+ *   Imports.
+ */
 
-import React from 'react'
-
-
-/*
-*   Constants.
-*/
-
-const MAX_SUMMARY_EXCERPT_LENGTH = 200
-
+import { shape, string } from "prop-types";
+import React from "react";
 
 /*
-*   React component for a single Conversation excerpt card.
-*/
+ *   Constants.
+ */
+
+const MAX_SUMMARY_EXCERPT_LENGTH = 200;
+
+/*
+ *   React component for a single Conversation excerpt card.
+ */
 
 const ConversationExcerpt = ({ conversation }) => {
+  let { summary } = conversation;
+  if (summary.length > MAX_SUMMARY_EXCERPT_LENGTH) {
+    summary = summary.slice(0, MAX_SUMMARY_EXCERPT_LENGTH);
+    const lastSpaceIndex = summary.lastIndexOf(" ");
+    summary = `${summary.slice(0, lastSpaceIndex)}...`;
+  }
 
-    let summary = conversation.summary
-    if (summary.length > MAX_SUMMARY_EXCERPT_LENGTH) {
+  return (
+    <a
+      href={conversation.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="conversation-excerpt"
+    >
+      <div className="card">
+        <div
+          className="card-image image is-3by2"
+          style={{
+            backgroundImage: `url('${conversation.historical_image_url}')`,
+          }}
+        />
+        <div className="card-content">
+          <div className="is-size-5 has-text-weight-light">
+            {conversation.place_name}
+          </div>
+          <div className="card-summary">{summary}</div>
+        </div>
+      </div>
+    </a>
+  );
+};
 
-        summary = summary.slice(0, MAX_SUMMARY_EXCERPT_LENGTH)
-        const lastSpaceIndex = summary.lastIndexOf(' ')
-        summary = summary.slice(0, lastSpaceIndex) + '...'
+ConversationExcerpt.propTypes = {
+  conversation: shape({
+    link: string,
+    historical_image_url: string,
+    place_name: string,
+    summary: string,
+  }).isRequired,
+};
 
-    }
-
-    return (
-        <a href={ conversation.link } className='conversation-excerpt'>
-            <div className='card'>
-                <div className='card-image image is-3by2' style={{ backgroundImage: `url('${ conversation.historical_image_url }')` }}></div>
-                <div className='card-content'>
-                    <div className='is-size-5 has-text-weight-light'>{ conversation.place_name }</div>
-                    <div className='card-summary'>{ summary }</div>
-                </div>
-            </div>
-        </a>
-    )
-
-}
-
-export default ConversationExcerpt
+export default ConversationExcerpt;

@@ -144,7 +144,7 @@ export default class ConversationMap extends React.Component {
       };
 
       const infoWindowContent = `
-                <a href="${conversation.link}" class="has-text-grey-darker">
+                <a href="${conversation.link}" target="_blank" rel="noopener noreferrer" class="has-text-grey-darker">
                     <div class="map-popup-title">${conversation.place_name}</div>
                     <div class="map-popup-link">Click for conversation</div>
                 </a>
