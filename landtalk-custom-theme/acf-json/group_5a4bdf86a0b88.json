@@ -205,7 +205,7 @@
             "label": "Historic Appearance (Required)",
             "name": "used_to_look",
             "type": "textarea",
-            "instructions": "How did the observer describe the way the place used to look?",
+            "instructions": "How does the observer describe the way the place used to look?",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -224,7 +224,7 @@
             "label": "Changes over Time (Required)",
             "name": "has_changed",
             "type": "textarea",
-            "instructions": "How did the observer describe how the place has changed?",
+            "instructions": "How does the observer describe how the place has changed?",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -243,7 +243,7 @@
             "label": "Historic & Current Activities (Required)",
             "name": "activities",
             "type": "textarea",
-            "instructions": "What are some of the things the observer used to do here?  What are some of the things the observer does here now?",
+            "instructions": "What are some of the things the observer used to do here? What are some of the things the observer does here now? Have their activities changed with changes in the landscape?",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -281,7 +281,7 @@
             "label": "Changes in the Future (Required)",
             "name": "will_change",
             "type": "textarea",
-            "instructions": "How could this place change in the future, and do you think that is what should happen?",
+            "instructions": "How could this place change in the future, and do you, the interviewer, think that is what should happen?\r\nYou are encouraged to discuss your views with the observer, but the answer should focus on your views.",
             "required": 1,
             "conditional_logic": [
                 [
@@ -308,7 +308,7 @@
             "label": "Additional Information (Optional)",
             "name": "additional_information",
             "type": "wysiwyg",
-            "instructions": "Use this box to add any additional information such as sources consulted, useful websites for visitors to check out, etc.",
+            "instructions": "Use this box to add any additional information such as sources consulted, useful websites for visitors to check out, HTML-formatted content, etc.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -937,5 +937,5 @@
     "active": 1,
     "description": "",
     "recaptcha": 0,
-    "modified": 1617328522
+    "modified": 1631814330
 }
