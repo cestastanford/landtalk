@@ -35,6 +35,7 @@ function landtalk_geocode( $input_address, $n_results ) {
 		function( $location ) {
 
 			$address = implode(
+				', ',
 				array_filter(
 					array_map(
 						function( $component_key ) use ( $location ) {
@@ -45,8 +46,7 @@ function landtalk_geocode( $input_address, $n_results ) {
 					function( $component_value ) {
 						return ! empty( $component_value );
 					}
-				),
-				', '
+				)
 			);
 
 			return array(
